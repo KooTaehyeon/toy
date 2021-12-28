@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/googoodan.css">
+    <title>랜덤 구구단</title>
+  </head>
+
+  <body>
+    <div class="gogodan_main">
+    <h1>구구단 맞추기</h1>
+    <div class="img_box">
+      <img class="img_pan" src="./img/googoodanMain.png" alt="사진">
+    </div>
+    <div class="googooden_main"><span id="googoo"> </span></div>
+    <input id="result_ip" type="text" />
+    <button type="button" id="btn">입력</button><br />
+    <div class="count"><span id="result_txt"></span></div>
+  </div>
+    <script>
+      //구구단에 필요한 변수들
+      let hang = Math.floor(Math.random() * 9) + 2;
+      let dan = Math.floor(Math.random() * 9) + 2;
+      let result = hang * dan;
+      const imgs = document.querySelector('.img_pan');
+
+      // let number = prompt('몇번 곱하기 할래?');
+      let count = 0;
+      let o = 0;
+      let x = 0;
+
+      googoo.innerText = `${dan}X${hang}`;
+
+      btn.addEventListener('click', function () {
+        result = hang * dan;
+        count += 1;
+        if (result == result_ip.value) {
+          result_ip.value = '';
+          result_txt.innerText = `정답이에요`;
+          hang = Math.floor(Math.random() * 9) + 2;
+          dan = Math.floor(Math.random() * 9) + 2;
+          googoo.innerText = `${dan}X${hang}`;
+          imgs.src ="./img/o.jpg"
+          o += 1;
+        } else {
+          imgs.src ="./img/x.jpg"
+          result_ip.value = '';
+          result_txt.innerText = `땡!`;
+          x += 1;
+        }
+
+        if (count === Number(number)) {
+          alert(`${o}회 성공 ${x}회 실패 총${number}회 햇습니다`);
+        } else {
+          
+          console.log(count);
+        }
+      });
+    </script>
+  </body>
+</html>

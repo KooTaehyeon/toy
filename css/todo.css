@@ -1,0 +1,143 @@
+body {
+  color: beige;
+  background-color: black;
+}
+
+.main_todo {
+  width: 50%;
+  height: 40vw;
+  margin: auto;
+  border: 1px solid rgb(252, 252, 252);
+  position: relative;
+  background-color: rgb(0, 0, 0);
+
+}
+
+.title_todo {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(247, 247, 247);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 3px solid;
+  position: relative;
+}
+
+.title_spans {
+  position: relative;
+  top: 25%;
+  color: black;
+
+}
+
+.todo_in {
+  width: 48vw;
+  font-weight: bold;
+  position: relative;
+  margin-top: 5px;
+}
+
+.todo_icon1 {
+  position: absolute;
+  left: 42vw;
+  display: inline-block;
+  cursor: pointer;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  border: solid 1px black;
+  background-color: azure;
+  transition: all 2s;
+}
+
+.todo_icon2 {
+  position: absolute;
+  left: 45.7vw;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  width: 60px;
+  height: 25px;
+  border: solid 1px black;
+  background-color: azure;
+  transition: all 2s;
+}
+
+.todo_icon1:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.todo_icon2:hover {
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.spans {
+  display: inline-block;
+  animation: anSpan 1.5s infinite;
+}
+
+@keyframes anSpan {
+  50% {
+    color: black;
+  }
+
+  100% {
+    color: white;
+  }
+}
+
+.todo_gro {
+  position: absolute;
+  top: 96.5%;
+  width: 52.2vw;
+  height: 20%;
+}
+
+.todo_add {
+  position: relative;
+  right: 40px;
+  width: 80%;
+  height: auto;
+  list-style: none;
+}
+
+.todo_txt {
+  width: 88%;
+  padding: 0;
+
+}
+
+.todo_txt:focus {
+  animation: aniTxt 2s infinite;
+}
+
+@keyframes aniTxt {
+  1% {
+    color: black;
+  }
+  25% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+#btn {
+  padding: 0;
+  width: 3vw;
+}
+
+.todo_li_none {
+  display: none;
+}
+
+.todo_li_acitve {
+  display: block;
+}
