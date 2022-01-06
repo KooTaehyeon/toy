@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>todoList 만들기</title>
-<link rel="stylesheet" href="./css/todo.css">
+  <link rel="stylesheet" href="./css/todo.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
       <span class="title_spans">할일 프롬프트</span>
     </div>
     <ul class="todo_add">
-     <!-- <li class="todo_in">아
+      <!-- <li class="todo_in">아
                 <div class="basic">
                  <span>텍스트</span>
                  <button>수정</button>
@@ -29,13 +29,12 @@
             </li>-->
     </ul>
     <div class="todo_gro">
-      <input type="text" class="todo_txt" id="todo_inp"  />
+      <input type="text" class="todo_txt" id="todo_inp" />
       <button type="button" id="btn">추가</button>
     </div>
   </div>
 
   <script>
-
     btn.addEventListener('click', list);
 
     const todo_add = document.querySelector('.todo_add');
@@ -55,15 +54,15 @@
       modifyBtn.classList.add('todo_icon1');
       removeBtn.classList.add('todo_icon2');
 
-      
+
 
       todo_span.innerText = `${todo_inp.value}`;
       todo_inp.value = '';
 
       modifyBtn.innerText = '수정';
       removeBtn.innerText = 'X';
-    
-      
+
+
       todo_in.append(todo_span);
       todo_in.append(modifyBtn);
       todo_in.append(inpu);
@@ -71,25 +70,23 @@
       todo_in.append(removeBtn);
       todo_add.append(todo_in);
 
-      modifyBtn.addEventListener('click', function(e){
-        if(modifyBtn.innerText ==='수정'){
+      modifyBtn.addEventListener('click', function (e) {
+        if (modifyBtn.innerText === '수정') {
           modifyBtn.innerText = '완료';
           modify(e);
-        }else if(modifyBtn.innerText ==='완료'){
+        } else if (modifyBtn.innerText === '완료') {
           modifyBtn.innerText = '수정';
           modify2(e);
         }
       })
-      removeBtn.addEventListener('click',remove);
+      removeBtn.addEventListener('click', remove);
     }
-    
-    
-   
-    function modify (e) {
+
+
+
+    function modify(e) {
       console.log(e.currentTarget.previousSibling);
       console.log(e.currentTarget.nextSibling);
-    
-
 
       const in_class = document.querySelector('.inputs');
       const in_span = document.querySelector('.spans')
@@ -100,8 +97,9 @@
       e.currentTarget.previousSibling.classList.toggle('todo_li_none');
 
       e.currentTarget.nextSibling.value = e.currentTarget.previousSibling.innerText;
-     }
-     function modify2 (e) {
+    }
+
+    function modify2(e) {
       const in_class = document.querySelector('.inputs');
       const in_span = document.querySelector('.spans')
 
@@ -110,17 +108,17 @@
 
       e.currentTarget.previousSibling.classList.toggle('todo_li_none');
 
-    e.currentTarget.previousSibling.innerText =  e.currentTarget.nextSibling.value;  
-    
-     }
+      e.currentTarget.previousSibling.innerText = e.currentTarget.nextSibling.value;
+
+    }
 
 
     //list 삭제 
 
-     function remove(e) {
-      console.log(e.target);
+    function remove() {
+      // console.log(e.target);
       if (this.innerText == 'X') {
-        console.log(e.target);
+        // console.log(e.target);
         this.parentNode.remove();
       }
     };
